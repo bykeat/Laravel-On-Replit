@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('teams', function (Blueprint $table) {
             $table->id();
+            $table->string("name", 255);
+            $table->tinyInteger("status");
+            $table->unsignedInteger("manager_id");
             $table->timestamps();
         });
     }

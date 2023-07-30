@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('team', function (Blueprint $table) {
             $table->id();
             $table->string("name", 255);
-            $table->tinyInteger("status", 1);
+            $table->tinyInteger("status");
             $table->timestamps();
         });
 
@@ -22,7 +22,7 @@ return new class extends Migration
           $table->id();
           $table->unsignedBigInteger("user_id");
           $table->unsignedBigInteger("team_id");
-        })
+        });
     }
 
     /**
@@ -31,5 +31,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('team');
+        Schema::dropIfExists('team_user');
     }
 };

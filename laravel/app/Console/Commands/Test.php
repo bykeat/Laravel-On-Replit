@@ -3,6 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Models\Team;
+use App\Models\User;
+use Error;
 use Illuminate\Console\Command;
 
 class Test extends Command
@@ -28,8 +30,15 @@ class Test extends Command
      */
     public function handle()
     {
-        error_log('Hi');
-        var_dump(Team::all());
+        $maxUserId = User::max('id');
+        $maxTeamId = Team::max('id');
+
+        $messages[] = "Max user id: $maxUserId";
+        $messages[] = "Max team id: $maxTeamId";
+
+        foreach ($messages as $message) {
+            error_log(json_encode($message));
+        }
 
         return Command::SUCCESS;
     }

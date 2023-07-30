@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Team;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class TeamSeeder extends Seeder
 {
@@ -15,6 +15,6 @@ class TeamSeeder extends Seeder
     public function run(): void
     {
         Team::query()->truncate();
-        Team::factory(10)->create()->save();
+        Team::factory()->count(10)->create();
     }
 }

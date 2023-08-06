@@ -16,7 +16,8 @@
   <div class="container-fluid">
     <div class="row">
       <!-- Left Sidebar -->
-      <div class="col-md-3 sidebar">
+      <div class="col-md-3 sidebar border h-100">
+User Manager {{ $my_name }}
         <!-- Add your sidebar content here -->
       </div>
 
@@ -24,15 +25,18 @@
       <div class="col-md-9">
         <!-- Header -->
         <header>
+          
           <!-- Add your header content here -->
         </header>
 
         <!-- Main Body with 2 Columns -->
         <div class="row">
           <div class="col-md-6">
+Users
             <!-- First column content -->
           </div>
           <div class="col-md-6">
+Teams
             <!-- Second column content -->
           </div>
         </div>

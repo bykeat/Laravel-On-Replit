@@ -14,6 +14,6 @@ class TeamUserSeeder extends Seeder
      */
     public function run()
     {
-        //
+        TeamUser::query()->truncate();
     }
 }

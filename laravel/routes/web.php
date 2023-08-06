@@ -28,9 +28,10 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
 Route::get('/users', function () {
-    return view('user-manager');
+  $my_name = env('MY_NAME');
+  Log::debug($my_name);
+    return view('user-manager', ['my_name' => $my_name]);
 });
 
 require __DIR__.'/auth.php';
